@@ -5,20 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/1e6cfe0430.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
-    
-    <input type="text" placeholder="Km da percorrere" name="km">
-    <select name="discount" id="discount">
-        <option value="baseValue">-- Seleziona uno sconto --</option>
-        <option value="noDiscount">Nessuno sconto</option>
-        <option value="young">Sconto 0-17</option>
-        <option value="old">Sconto 65+</option>
-    </select>
-    <input type="button" value="Genera" name="submit">
+<body class="grid">
 
-    <h1 id="price">Il prezzo del tuo biglietto è: </h1>
+    <header class="main-header">
+        <h1 class="title">TRENITARDI</h1>
+        <button id="mode">
+            <i id="moon" class="fa-solid fa-moon"></i>
+            <i id="sun" class="fa-solid fa-sun display"></i>
+        </button>
+    </header>
+    
+    <div class="form">
+        <div class="inputs">
+            <input class="text" type="text" placeholder="Nome e cognome" name="firstLastName">
+            <input class="text" type="text" placeholder="Km da percorrere" name="km">
+            <select class="select" name="discount" id="discount">
+                <option value="baseValue">-- Seleziona uno sconto --</option>
+                <option value="noDiscount">Nessuno sconto</option>
+                <option value="young">Sconto 0-17</option>
+                <option value="old">Sconto 65+</option>
+            </select>
+        </div>
+        <input class="button" type="button" value="Genera" name="submit">
+        
+    </div>
+    
+    <div class="card card-shadow">
+        <div class="card-header">
+            <h1 id="name"></h1>
+        </div>
+
+        <div class="card-main">
+            <div>
+                Km da percorrere:
+                <span id="distance"></span>
+            </div>
+            <div>
+                codice biglietto:
+                <span id="ticket-code"></span>
+            </div>
+            <div>
+                Prezzo iniziale:
+                <span id="starting-price"></span>
+            </div>
+            <div>
+                Sconto applicato:
+                <span id="applied-discount"></span>
+            </div>
+        </div>
+        <div class="card-footer">
+            <h1 class="final">
+                Prezzo finale:
+                <span id="price"></span>
+            </h1>
+        </div>
+    </div>
 
     <script src="./js/app.js"></script>
 </body>
